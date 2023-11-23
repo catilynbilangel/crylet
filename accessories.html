@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utc-8">
+    <meta name="viewport" content="width=device-width, initial-scale="1">
+    <title>Crylet Express</title>
+    <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>*{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+        list-style: none;
+        scroll-behavior: smooth;
+    
+    }
+    
+    root{
+        --bg-color: #ffffff;
+        --text-color: #121212;
+        --main-font: 2.2rem;
+        --p-font: 1.1rem;
+    }
+    
+    body{
+        background-image: url('image/gg.jpg');
+        color: var(--text-color);
+        background-size: cover; 
+        background-position: center;
+    }
+    
+    header{
+        width: 100%;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+        position: fixed;
+        background-color: #192841; 
+        color: white;
+        box-shadow: 0px 2px 18px rgb(129 162 182 / 20%);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 25px 8%;
+        transition: .3s;
+    }
+    
+    .logo{
+        color: var(--text-color);
+        font-size: var(--main-font);
+        font-weight: 900;
+        font-size: 26px;
+        line-height: 0.8;
+        text-decoration: none;
+    }
+    #menu-icon{
+        font-size: 38px;
+        color: var(--text-color);
+        z-index: 10001;
+        display: none;
+    
+    }
+                   
+    .navbar{
+        display: flex;
+    }
+    
+    .navbar a{
+        text-decoration: none;
+        font-size: var(--p-font);
+        color: var(--text-color);
+        font-weight: 600;
+        padding: 10px 15px;
+        margin: 0 10px;
+        transition: all .40s ease;
+    }
+    
+    .navbar a:hover{
+        background: black;
+        color: #fff;
+    }
+    
+    .icons{
+        display: inline-block;
+    }
+    
+    .icons i{
+        color: white;
+        font-size: 24px;
+        margin-left: 15px;
+    }
+    .icons i:hover{
+        opacity: 0.7;
+    }
+    
+    section{
+        padding: 100px 8%;
+    }
+    
+    .container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, auto));
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+        cursor: pointer;
+        padding-top: 2rem;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .box{
+        padding: 0px 20px 10px 20px;
+        background: transparent;
+        background-color: gray;
+        box-shadow: 5px 30px 56.1276px rgb(55 55 55 /12%);
+        border-radius: 10px;
+        position: relative;
+        transition: all .35s ease;
+        height: 100%;
+        width: 100%;
+    
+    }
+    
+    .box img{
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 10px auto 0;
+    }
+    
+    .box h4{
+        font-size: 15px;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+    }
+    
+    .box h5{
+        font-size: 14px;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+    
+    .box .cart i {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 35px;
+        height: 35px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #3498db;
+        color: maroon;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+    }
+    
+    
+    .box:hover{
+        transform: translateY(-5px);
+    }
+    .buy-button {
+        background-color: #ff6f61;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px; 
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      
+      .buy-button:hover {
+        background-color: #ed473f;
+      }
+    
+    .about{
+        background: #f7f6f6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .about-content{
+        text-align: center;
+    }
+    
+    .about-content h2{
+        font-size: var(--main-font);
+        margin-bottom: 30px;
+    }
+    
+    .about-content p{
+        max-width: 600px;
+        font-size: var(--p-font);
+        font-weight: 600;
+        color: var(--text-color);
+        line-height: 30px;
+    }
+    
+    
+    </style>
+</head>
+
+<body>
+   
+<header>
+    <a href="index.html" class="logo" >ACCESSORIES</a>
+    <div class="bx bx-menu" id="menu-icon"></div>
+    <ul class="navbar">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="shop.html">CLOTHES</a></li>
+        <li><a href="gadgets.html">GADGETS</a></li>
+
+
+    </ul>
+    <div class="icons">
+        <a href="#"><i class='bx bxs-keyboard' ></i></a>
+        <a href="#"><i class='bx bx-user-circle'></i></a>
+        <a href="#"><i class='bx bxs-store' ></i></a>
+    </div>
+</header>
+
+
+
+<section class="shop" id="shop">
+    <div class="container">
+        <div class="box">
+            <img src="shop/a1.jpg">
+            <h4>Tri Set Silver Accessories</h4>
+            <h5>P29,000.00</h5>
+            <div class="cart">
+                <a href="#"><i class='bx bxs-cart'></i></a>
+            </div>
+            <button class="buy-button">Buy Now</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/a2.jpg">
+            <h4>Casio Leather Strap Brown</h4>
+            <h5>P3,899.00</h5>
+            <div class="cart">
+                <a href="#"><i class='bx bxs-cart'></i></a>
+            </div>
+            <button class="buy-button">Buy Now</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/a3.jpg">
+            <h4>Casio Gold Watch</h4>
+            <h5>P10,999.00</h5>
+            <div class="cart">
+                <a href="#"><i class='bx bxs-cart'></i></a>
+            </div>
+            <button class="buy-button">Buy Now</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/a4.jpg">
+            <h4>Casio Silver</h4>
+            <h5>P7,000.00</h5>
+            <div class="cart">
+                <a href="#"><i class='bx bxs-cart'></i></a>
+            </div>
+            <button class="buy-button">Buy Now</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/a5.jpg">
+            <h4>Casio Silver Gold Variant</h4>
+            <h5>P9,000.00</h5>
+            <div class="cart">
+                <a href="#"><i class='bx bxs-cart'></i></a>
+            </div>
+            <button class="buy-button">Buy Now</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/a6.jpg">
+            <h4>Casio Classic</h4>
+            <h5>P4,000.00</h5>
+            <div class="cart">
+                <a href="#"><i class='bx bxs-cart'></i></a>
+            </div>
+            <button class="buy-button">Buy Now</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/a7.jpg">
+            <h4>UAE 18K Gold</h4>
+            <h5>P7,000.00</h5>
+            <div class="cart">
+                <a href="#"><i class='bx bxs-cart'></i></a>
+            </div>
+            <button class="buy-button">Buy Now</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/a8.jpg">
+            <h4>Japan 22K Gold</h4>
+            <h5>P9,899.00</h5>
+            <div class="cart">
+                <a href="#"><i class='bx bxs-cart'></i></a>
+            </div>
+            <button class="buy-button">Buy Now</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/a9.jpg">
+            <h4>Gold Bracelet 18K</h4>
+            <h5>P7,000.00</h5>
+            <div class="cart">
+                <a href="#"><i class='bx bxs-cart'></i></a>
+            </div>
+            <button class="buy-button">Buy Now</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/a10.jpg">
+            <h4>Lion Bracelet 22k Gold</h4>
+            <h5>P13,000.00</h5>
+            <div class="cart">
+                <a href="#"><i class='bx bxs-cart'></i></a>
+            </div>
+            <button class="buy-button">Buy Now</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/a11.jpg">
+            <h4>Imitation Ring</h4>
+            <h5>P12,000.00</h5>
+            <div class="cart">
+                <a href="#"><i class='bx bxs-cart'></i></a>
+            </div>
+            <button class="buy-button">Buy Now</button>
+        </div>
+
+        <div class="box">
+            <img src="shop/a12.jpg">
+            <h4>Dark Ring</h4>
+            <h5>2,000.00</h5>
+            <div class="cart">
+                <a href="#"><i class='bx bxs-cart'></i></a>
+            </div>
+            <button class="buy-button">Buy Now</button>
+        </div>
+
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="about-content">
+        <h2>About</h2>
+        <p>This Website Sells High Quality Accessories Hand Pick Just For You</p>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Creation</title>
+    <style>* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        background-image: url('image/background.png');
+        background-size: cover;
+        background-position: center;
+        color: white;
+    }
+    
+    header {
+        background-color: #192841;
+        color: white;
+        padding: 20px;
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 0 15px;
+        transition: transform 0.3s ease;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 4px;
+    }
+    
+    nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    nav ul li a:focus {
+        outline: none;
+    }
+    
+    nav ul li:hover {
+        transform: scale(1.1);
+    }
+    
+    .signin-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .sign-box {
+        max-width: 40%;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 40px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        color: black;
+    }
+    
+    .sign-box h2 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .input-container {
+        margin-bottom: 15px;
+    }
+    
+    .input-container input {
+        padding: 10px;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    
+    .button {
+        padding: 12px 25px;
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .button:hover {
+        background-color: #ed473f;
+    }</style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="signin-section">
+        <div class="sign-box">
+            <h2>Create Account</h2>
+            <form>
+                <div class="input-container">
+                    <input type="text" placeholder="Username">
+                </div>
+                <div class="input-container">
+                    <input type="email" placeholder="Email">
+                </div>
+                <div class="input-container">
+                    <input type="password" placeholder="Password">
+                </div>
+                <button class="button">Create Account</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
